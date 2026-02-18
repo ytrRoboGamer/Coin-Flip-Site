@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Coin-Flip Game 🪙</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+    
+        <div class="buttons">
+
+        <button class="headsButton"; onclick="
+        game('heads'); ">
+        <img src="images/heads.png" alt="Heads">
+        <br> Heads
+        </button>
+
+
+        <button class="tailsButton"; onclick="
+        game('tails'); ">
+        <img src="images/tails.png" alt="Tails">
+        <br> Tails
+        </button>
+
+        </div>
+
+
+
+
+        <script>
+            let result = '';
+            const score = {
+                wins: 0,
+                losses: 0,
+            }
+
+
+            function game(move) {
+                let randomNumber = Math.random();
+
+                if (randomNumber >= 0 && randomNumber < 0.5) {
+
+                    const rightChoice = 'heads';
+
+                    if (move === rightChoice) {
+                        result = 'You won! 🎉';
+                        score.wins += 1;
+                    } else {
+                        result = 'You lost ☹️';
+                        score.losses += 1;
+                    };
+
+                } else if (randomNumber >= 0.5 && randomNumber < 1) {
+
+                    const rightChoice = 'tails';
+
+                    if (move === rightChoice) {
+                        result = 'You won! 🎉';
+                        score.wins += 1;
+                    } else {
+                        result = 'You lost ☹️';
+                        score.losses += 1;
+                    };
+
+                } else {
+                    result = 'There was a proplem. Give it another try';
+                }
+
+                alert(result)
+
+            }
+
+        </script>
+    </body>
+</html>
